@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "reflex-todo-app"
+version = "0.1.0"
+description = ""
+authors = ["daniel.henriques <daniel@clipit.ai>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+reflex = "^0.4.5"
+
+[tool.poetry.scripts]
+start = "reflex:run"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
