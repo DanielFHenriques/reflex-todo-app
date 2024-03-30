@@ -52,6 +52,19 @@ def index():
         return rx.cond(t["status"] == State.current_tab, todo(t, State.complete_todo, State.remove_todo))
 
     return rx.vstack(
+        rx.script(
+            src="https://www.googletagmanager.com/gtag/js?id=G-R32T2965HZ",
+            custom_attrs={"async": True}
+        ),
+        rx.script(
+            """
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'G-R32T2965HZ');
+            """
+        ),
         rx.heading("My Todos", font_size="2em"),
         rx.hstack(
             rx.form(
